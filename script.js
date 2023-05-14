@@ -28,3 +28,29 @@ function generate(user_input){
         correctlevel: QRCode.correctlevel.H
     });
 }
+
+let download = document.createElement("button");
+qr_code_element.appendChild(download);
+
+let download_link = document.createElement("a");
+download_link.setAttribute("download", "qr-code.png");
+download_link.innerHTML = 'Download <i class="fa-solid fa-download"></i>';
+
+document.appendChild(download_link);
+
+let qr_code_img = document.querySelector(".qr_code img");
+let qr_code_canvas = document.querySelector("canvas");
+
+if(qr_code_img.getAttribute("src") == null){
+    setTimeout(() => {
+        download_link.setAttribute("href", `${qr_code_canvas.toDataURL()}`);
+    }, 300);
+} else{
+    setTimeout(() => {
+        download_link.setAttribute("href", `${qr_code_img.setAttribute("src")}`);  
+    }, 300);
+}
+
+generate({
+    value: "https://www.codewithrandom.com/"
+});
