@@ -19,13 +19,13 @@ btn.addEventListener("click", ()=> {
 function generate(user_input){
     qr_code_element.style = "";
 
-    var qrcode = new QRCode(qr_code_element, {
+    var qrcode = new qrcode(qr_code_element, {
         text: `${user_input.value}`,
         width: 180,
         height: 180,
         colorDark: "#000000",
         colorLight: "#ffffff",
-        correctlevel: QRCode.correctlevel.H
+        correctlevel: qrcpode.correctlevel.H
     });
 }
 
