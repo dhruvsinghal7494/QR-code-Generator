@@ -25,7 +25,7 @@ function generate(user_input){
         height: 180,
         colorDark: "#000000",
         colorLight: "#ffffff",
-        correctlevel: qrcpode.correctlevel.H
+        correctlevel: qrcode.correctlevel.H
     });
 }
 
